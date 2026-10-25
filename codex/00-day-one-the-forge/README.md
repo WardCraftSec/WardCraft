@@ -1,0 +1,69 @@
+# Codex Entry 00 — Day One: The Forge
+
+**Date:** 2026-10-25
+**Duration:** ~4 hours (evening)
+**Tags:** `git` `termux` `secrets-management` `workflow` `foundation`
+
+> *Before you can cast wards, you need a hand to hold the hammer.*
+
+---
+
+## What I set out to do
+
+Get a working GitHub portfolio live from my Pixel 7, using only Termux.
+No laptop. No IDE. No browser-based editing. Just the terminal.
+
+## What I actually did
+
+| Time | Action | Result |
+|------|--------|--------|
+| ~18:00 | Created GitHub account `WardCraftSec` | ✅ |
+| ~18:15 | Created profile repo + main repo | ✅ |
+| ~18:30 | Wrote profile README (ᚹᚫᚱᛞᚲᚱᚫᚠᛏ ᛋᛖᚲ) | ✅ Pushed |
+| ~18:45 | Tried to clone repo in Termux | ❌ `git: command not found` |
+| ~18:50 | `pkg install git` | ✅ |
+| ~19:00 | `git clone` | ✅ |
+| ~19:10 | Tried to create `.gitignore` with heredoc | ❌ Nothing happened |
+| ~19:15 | Tried `nano .gitignore` | ❌ Nothing happened |
+| ~19:20 | Termux froze entirely | ❌ Black screen |
+| ~19:25 | Killed Termux, reopened | ✅ Back |
+| ~19:30 | Used `printf` one-liner instead | ✅ `.gitignore` created |
+| ~19:40 | `git commit` | ❌ "unable to auto-detect email" |
+| ~19:45 | Set `git config --global user.name` | ✅ |
+| ~19:47 | Set `git config --global user.email` (first attempt malformed) | ❌ |
+| ~19:48 | Fixed the command (added space + `=`) | ✅ |
+| ~19:50 | `git push` | ❌ "Authentication failed" |
+| ~19:55 | Learned GitHub requires a PAT, not a password | — |
+| ~20:00 | Generated Personal Access Token in browser | ✅ |
+| ~20:05 | `git remote set-url origin https://user:token@github.com/...` | ✅ |
+| ~20:10 | `git push -u origin main` | ✅ **Pushed** |
+| ~20:20 | Wrote `ward_cast.py` | ✅ |
+| ~20:30 | `git add . && git commit && git push` | ✅ **First ward shipped** |
+
+## What broke and why
+
+| Problem | Cause | Fix |
+|---------|-------|-----|
+| `git: command not found` | Termux is a minimal Linux. Nothing is pre-installed. | `pkg install git` |
+| Heredoc (`<< 'EOF'`) did nothing | Phone keyboard + Termux's line handling. The `EOF` terminator didn't register properly. | Use `printf '...\n...' > file` instead |
+| `nano` appeared to do nothing | Terminal was frozen (accidental Ctrl+S pauses output) | Ctrl+Q to unfreeze, or kill/reopen Termux |
+| `git commit` failed | No identity configured. Git needs a name + email for every commit. | `git config --global user.name "..."` + `user.email "..."` |
+| `git push` auth failed | GitHub disabled password auth in 2021. You need a Personal Access Token. | Generate PAT → embed in remote URL |
+| Token in `git remote -v` output | I pasted the output into a chat | **Rotate the token.** Assume it's public. |
+| AbuseIPDB key pasted in chat | Same mistake, different key | **Rotate the key.** Same rule. |
+
+## What I learned (the actual lessons)
+
+### 1. Termux is not a desktop terminal
+
+It's a minimal Linux environment on Android. No `git`, no `nano` working reliably, no heredoc reliability. The workarounds are:
+- `pkg install <thing>` for anything missing
+- `printf` over heredoc for file creation
+- `nano` is fine *if* the terminal isn't frozen
+git add .
+git commit -m "dayone"
+git push   
+- Ctrl+S freezes output. Ctrl+Q unfreezes. This will happen again.
+
+### 2. Git is a 3-step loop
+
