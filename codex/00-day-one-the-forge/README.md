@@ -67,3 +67,64 @@ git push
 
 ### 2. Git is a 3-step loop
 
+### 3. A secret that's been typed is a secret that's gone
+
+I pasted two API keys into a chat this evening. Both are now compromised by definition. The rule:
+
+> If a secret appears anywhere it shouldn't (chat, screenshot, commit, URL bar), rotate it. Don't "remember to do it later." Do it now, before you do the next thing.
+
+This is the first real blue team habit. In a SOC, you'll see this in incident response: a key leaked in a Slack message → rotate it before you investigate what it was used for. Contain first, investigate second.
+
+### 4. .gitignore is your first line of defence
+
+Without it, one `git add .` and your `.env` (with API keys) is on GitHub forever. Even after you delete the file, it's in the git history. The `.gitignore` is the ward that prevents the breach from happening in the first place.
+
+| File | Why it's ignored |
+|------|-----------------|
+| `.env` | Contains API keys |
+| `ward_log.json` | Contains real IPs I've checked |
+| `*.pem` / `*.key` | Private keys |
+| `__pycache__/` | Python junk |
+
+### 5. The "malformed command" pattern
+
+I made the same type of mistake 3 times today:
+- `git config --global user.emailsilmarillimum@proton.me` (missing space + =)
+- `git config --global user.name "WardCraftSec"   WardCraftSec` (trailing junk)
+- Heredoc that didn't close properly
+
+The pattern: typing fast on a phone keyboard, losing track of where a command ends. The fix: type one command, press Enter, read the output, then type the next. Don't batch.
+
+### 6. "Nothing happened" usually means the terminal is frozen
+
+Not the command. Not the file. The terminal. Ctrl+S pauses all output. It looks identical to "the command did nothing." The fix is always Ctrl+Q first, then retry.
+
+## What this maps to (blue team)
+
+| What I did today | Blue team equivalent |
+|-----------------|---------------------|
+| Setting up git + GitHub from scratch | Onboarding a new analyst: getting their tools configured |
+| Hitting "command not found" and fixing it | First day in a SOC: "where's the SIEM access?" |
+| Creating .gitignore before committing secrets | Writing a detection rule before the incident, not after |
+| Rotating keys after exposure | Containment in IR: revoke the compromised credential first |
+| The 3-step loop (add/commit/push) | PICERL: Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned |
+| "Nothing happened" → Ctrl+Q | Alert fired but no output → check if the pipeline is stuck, not the data |
+
+## What's next
+
+| When | What |
+|------|------|
+| Tonight | Create .env, run ward_cast.py against a real IP |
+| Tomorrow | Paste the GrapheneOS write-up into codex/01 |
+| This week | ioc_enrich.py (bulk IOC enrichment) |
+| Next week | First Sigma rule (SSH brute force detection) |
+
+## The honest summary
+
+I spent 4 hours tonight doing what takes a developer 10 minutes. I froze my terminal, typed malformed commands, pasted secrets into a chat, and fought with a phone keyboard. But at the end, I have a working git workflow on a Pixel 7, a branded GitHub presence, and a first script that's live.
+
+That's the difference between "I watched a tutorial" and "I built it and it broke and I fixed it." The breaking is the learning.
+
+---
+
+*Codex Entry 00 — The Forge. Where the hand learns to hold the hammer.*   
