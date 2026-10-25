@@ -1,0 +1,7 @@
+.env
+ward_log.json
+*.pem
+*.key
+secrets/
+__pycache__/
+*.pyc
