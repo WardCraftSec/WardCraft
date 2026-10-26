@@ -8,8 +8,8 @@
 | Oct 2026 | GrapheneOS home stack write-up | [codex/01](./codex/01-grapheneos-stack/) |
 | Oct 2026 | `ward_cast.py` — IP reputation ward | [ward-scripts/](./ward-scripts/) |
 
-## Ward Scripts
-
+- [x] ward_cast.py (IP reputation, AbuseIPDB)
+- [ ] IOC enrichment script (ioc_enrich.py)   
 | Script | What it does | Status |
 |--------|-------------|--------|
 | `ward_cast.py` | Check IP vs AbuseIPDB, log block/clean | ✅ Working |
@@ -21,8 +21,7 @@
 | # | Title | Date | Tags |
 |---|-------|------|------|
 | 01 | [GrapheneOS Home Stack](./codex/01-grapheneos-stack/) | Oct 2026 | `defensive` `os-hardening` `dns` |
-| 02 | NextDNS: 30 Days of Anomalies | Nov 2026 | `siem` `log-analysis` |
-| 03 | Home Lab SIEM (Wazuh) | Dec 2026 | `siem` `wazuh` `sigma` |
+| 02 | [NextDNS Log Reading](./codex/02-nextdns-log-reading) | Oct 2026 | `dns` `nextdns` |   | 03 | Home Lab SIEM (Wazuh) | Dec 2026 | `siem` `wazuh` `sigma` |
 
 ## Conventions
 
@@ -37,4 +36,4 @@
 |------|--------|
 | Security+ (SY0-701) | Q1 2027 |
 | PT1 | Q1 2027 |
-| SOC Tier 1 application | Q2 2027 |   
+| SOC Tier 1 application | Q2 2027 | 
