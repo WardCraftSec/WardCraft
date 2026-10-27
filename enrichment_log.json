@@ -1,0 +1,31 @@
+[
+  {
+    "timestamp": "2026-10-27T20:53:22.670982",
+    "ioc": "185.220.101.1",
+    "type": "ip",
+    "sources": [
+      {
+        "source": "AbuseIPDB",
+        "score": 100,
+        "country": "DE",
+        "asn": "unknown",
+        "total_reports": 194,
+        "status": "BLOCK"
+      },
+      {
+        "source": "VirusTotal",
+        "malicious": 15,
+        "suspicious": 3,
+        "undetected": 28,
+        "harmless": 46,
+        "reputation": 3,
+        "country": "DE",
+        "tags": [
+          "suspicious-udp",
+          "tor",
+          "self-signed"
+        ]
+      }
+    ]
+  }
+]
