@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""ᚹᚫᚱᛞᚲᚫᚠᛏ — ward_cast.py
-Check IP reputation via AbuseIPDB. Log result to ward_log.json.
-Usage: python ward_cast.py <ip>
-"""
+"""ward_cast.py — Check IP reputation via AbuseIPDB."""
 
 import sys
 import json
@@ -26,7 +23,7 @@ def check_ip(ip):
         print("ERROR: ABUSEIPDB_KEY not found in .env")
         sys.exit(1)
 
-    url = f"https://api.abuseipdb.com/api/v2/ip/{ip}"
+    url = f"https://api.abuseipdb.com/api/v2/check?ipAddress={ip}"
     req = urllib.request.Request(url, headers={
         "Key": key,
         "Accept": "application/json"
