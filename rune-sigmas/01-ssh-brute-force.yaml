@@ -1,0 +1,17 @@
+title: Multiple Failed SSH Logins
+id: 7a3f1c2e-4b8d-4e9a-b5c1-2d6e8f0a1b3c
+status: experimental
+description: Detects repeated SSH authentication failures from a single source IP
+author: WardCraftSec
+date: 2026-10-27
+logsource:
+    product: linux
+    service: sshd
+detection:
+    selection:
+        message: "Failed password"
+    condition: selection | count() by src_ip > 5
+level: medium
+tags:
+    - attack.credential_access
+    - attack.t1110   
