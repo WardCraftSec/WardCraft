@@ -1,4 +1,4 @@
-# WardCraft
+| 03  | Termux Ollama via curl | Oct 2026 | api curl local-llm |   | 03  | Termux Ollama via curl | Oct 2026 | api curl local-llm |   # WardCraft
 ᚹᚫᚱᛞᚲᚱᚫᚠᛏ — Blue team scripts, codex entries &amp; detection rules :: blue-team  threat-intel  python  sigma  yara  home-lab  defensive-security  nextdns   
 
 ## Recent Work
@@ -21,10 +21,11 @@
 | # | Title | Date | Tags |
 |---|-------|------|------|
 | 01 | [GrapheneOS Home Stack](./codex/01-grapheneos-stack/) | Oct 2026 | `defensive` `os-hardening` `dns` |
-| 02 | [NextDNS Log Reading](./codex/02-nextdns-log-reading) | Oct 2026 | `dns` `nextdns` |   | 03 | Home Lab SIEM (Wazuh) | Dec 2026 | `siem` `wazuh` `sigma` |
+| 02 | [NextDNS Log Reading](./codex/02-nextdns-log-reading) | Oct 2026 | `dns` `nextdns` |
+| 03 | [Termux Ollama via curl](./codex/03-termux-ollama-curl/) | Oct 2026 | `api` `curl` `local-llm` |    
+ | 04 | Home Lab SIEM (Wazuh) | Dec 2026 | `siem` `wazuh` `sigma` |
 
 ## Conventions
-
 - Write-ups: numbered `NN-slug/README.md`, written same-day
 - Scripts: run on Termux (Pixel 7) or any Linux box, Python 3.11+
 - Sigma rules: follow [Sigma spec](https://github.com/SigmaHQ/sigma)
