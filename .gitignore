@@ -6,3 +6,4 @@ secrets/
 __pycache__/
 *.pyc
 ward_log.json
+enrichment_log.json
