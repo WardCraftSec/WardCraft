@@ -5,3 +5,4 @@ ward_log.json
 secrets/
 __pycache__/
 *.pyc
+ward_log.json
