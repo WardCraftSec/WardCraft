@@ -1,7 +1,3 @@
-git status   
-
-git status   
-| 03  | Termux Ollama via curl | Oct 2026 | api curl local-llm |   | 03  | Termux Ollama via curl | Oct 2026 | api curl local-llm |   # WardCraft
 ᚹᚫᚱᛞᚲᚱᚫᚠᛏ — Blue team scripts, codex entries &amp; detection rules :: blue-team  threat-intel  python  sigma  yara  home-lab  defensive-security  nextdns   
 
 ## Recent Work
