@@ -105,7 +105,6 @@ surveillance, data collection, not a nation-state), this is the right trade.
 
 - Smallest model in the Qwen 3 line that still produces coherent output
 - Fits in 128GB storage alongside everything else (it's tight, but so is cash)
-- I wanted to see how my prompts actually work on a small model
 - The setup process (Termux → Ollama → model download) was the real lesson
 - I hit every issue in the community docs. That's the point.
 
@@ -133,7 +132,7 @@ Seven would mean I'm switching profiles 40 times a day and hating my life.
 | Evening | Review the day's log. Note anything new. Adjust block rules if I spot a tracker I missed. |
 | Weekly | Check GrapheneOS for updates. Approve when ready. |
 | Monthly | Review which apps are actually being used. Kill any profile I haven't touched in 30 days. |
-
+> The NextDNS log review is the closest thing to a SOC shift I've done. You're watching a stream of thousands of DNS queries and your brain is constantly asking "is that domain supposed to be there?" That's exactly what a Tier 1 analyst does with a SIEM. The setup took 10 minutes. The log review is the skill.   
 ---
 
 ## Pain Points (honest)
@@ -147,6 +146,7 @@ Seven would mean I'm switching profiles 40 times a day and hating my life.
 
 ---
 
+*These are mental models that transferred, not formal equivalences.*   
 ## What This Taught Me (that maps to blue team)
 
 | What I did at home | Blue team equivalent |
@@ -159,7 +159,6 @@ Seven would mean I'm switching profiles 40 times a day and hating my life.
 | Deciding *what* to sandbox and *why* | Risk assessment — you can't protect everything, so you prioritise based on threat |
 
 The NextDNS log review is the closest thing to a SOC shift I've done.
-You're watching a stream of thousands of DNS queries and your brain is
 constantly asking "is that domain supposed to be there?" That's exactly
 what a Tier 1 analyst does with a SIEM.
 
@@ -170,11 +169,8 @@ what a Tier 1 analyst does with a SIEM.
 | What I'm doing | Mitigates | ID |
 |---------------|-----------|-----|
 | NextDNS malicious domain block | Ingress Tool Transfer, Command & Control | T1105, T1071 |
-| DoT encryption | Defence Evasion (DNS tunnelling) | T1572 |
 | Profile isolation | Credential Access, Lateral Movement | T1552, T1021 |
 | No Play Services | Collection, Exfiltration (telemetry) | T1119, T1041 |
-| F-Droid only | Supply Chain Compromise | T1195.002 |
-| Manual update approval | Defence Evasion (malicious update) | T1583.004 |
 
 ---
 
