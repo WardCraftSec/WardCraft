@@ -9,9 +9,11 @@ logsource:
     service: sshd
 detection:
     selection:
-        message: "Failed password"
+        message|contains: "Failed password for"
+        dst_port: 22
+    timeframe: 5m
     condition: selection | count() by src_ip > 5
-level: medium
+level: high
 tags:
     - attack.credential_access
-    - attack.t1110   
+    - attack.t1110.001
