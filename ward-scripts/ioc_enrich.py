@@ -24,7 +24,7 @@ def get_key(name):
 
 def is_ip(value):
     parts = value.split(".")
-    return len(parts) == 4 and all(p.isdigit() for p in parts)
+    return len(parts) == 4 and all(p.isdigit() and 0 <= int(p) <= 255 for p in parts)
 
 def check_abuseipdb(ip):
     key = get_key("ABUSEIPDB_KEY")
@@ -38,7 +38,7 @@ def check_abuseipdb(ip):
     })
 
     try:
-        with urllib.request.urlopen(req) as resp:
+        with urllib.request.urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read())
     except urllib.error.HTTPError as e:
         return {"source": "AbuseIPDB", "error": f"HTTP {e.code}"}
@@ -69,7 +69,7 @@ def check_virustotal(ioc):
     })
 
     try:
-        with urllib.request.urlopen(req) as resp:
+        with urllib.request.urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read())
     except urllib.error.HTTPError as e:
         if e.code == 404:
