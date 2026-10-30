@@ -1,5 +1,5 @@
 # Codex Entry 00 — Day One: The Forge
-
+> The security-relevant lessons start at #1. The rest is Termux survival.   
 **Date:** 2026-10-25
 **Duration:** ~4 hours (evening)
 **Tags:** `git` `termux` `secrets-management` `workflow` `foundation`
@@ -86,29 +86,6 @@ Without it, one `git add .` and your `.env` (with API keys) is on GitHub forever
 | `*.pem` / `*.key` | Private keys |
 | `__pycache__/` | Python junk |
 
-### 5. The "malformed command" pattern
-
-I made the same type of mistake 3 times today:
-- `git config --global user.emailsilmarillimum@proton.me` (missing space + =)
-- `git config --global user.name "WardCraftSec"   WardCraftSec` (trailing junk)
-- Heredoc that didn't close properly
-
-The pattern: typing fast on a phone keyboard, losing track of where a command ends. The fix: type one command, press Enter, read the output, then type the next. Don't batch.
-
-### 6. "Nothing happened" usually means the terminal is frozen
-
-Not the command. Not the file. The terminal. Ctrl+S pauses all output. It looks identical to "the command did nothing." The fix is always Ctrl+Q first, then retry.
-
-## What this maps to (blue team)
-
-| What I did today | Blue team equivalent |
-|-----------------|---------------------|
-| Setting up git + GitHub from scratch | Onboarding a new analyst: getting their tools configured |
-| Hitting "command not found" and fixing it | First day in a SOC: "where's the SIEM access?" |
-| Creating .gitignore before committing secrets | Writing a detection rule before the incident, not after |
-| Rotating keys after exposure | Containment in IR: revoke the compromised credential first |
-| The 3-step loop (add/commit/push) | PICERL: Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned |
-| "Nothing happened" → Ctrl+Q | Alert fired but no output → check if the pipeline is stuck, not the data |
 
 ## What's next
 
@@ -125,6 +102,6 @@ I spent 4 hours tonight doing what takes a developer 10 minutes. I froze my term
 
 That's the difference between "I watched a tutorial" and "I built it and it broke and I fixed it." The breaking is the learning.
 
----
+
 
 *Codex Entry 00 — The Forge. Where the hand learns to hold the hammer.*   
