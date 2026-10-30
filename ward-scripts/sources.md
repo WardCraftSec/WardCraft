@@ -3,7 +3,7 @@
 Quick reference. API keys in .env, never here.
 
 ## AbuseIPDB
-- Endpoint: https://api.abuseipdb.com/api/v2/ip/{ip}
+- Endpoint: https://api.abuseipdb.com/api/v2/check?ipAddress={ip}
 - Header: Key: $ABUSEIPDB_KEY
 - Rate: 1000 req/day (free)
 - Returns: abuse confidence score (0-100), country, ASN, reports
