@@ -1,0 +1,12 @@
+# Known malicious
+185.220.101.34
+45.155.205.233
+103.215.31.12
+23.94.188.227
+xmr-stak-pool.example-mining.com
+
+# Known clean (for contrast)
+8.8.8.8
+1.1.1.1
+pypi.org
+github.com   
