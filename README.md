@@ -1,16 +1,16 @@
-ᚹᚫᚱᛞᚲᚱᚫᚠᛏ — Blue team scripts, codex entries & detection rules :: blue-team threat-intel python sigma yara home-lab defensive-security nextdns
+# WardCraft
 
-# ᚹᚫᚱᛞᚲᚱᚫᚠᛏ
-Blue team scripts, codex entries & detection rules.
+Blue team scripts, detection rules & documented log reviews.
 
 ## Recent Work
 
 | Date | What | Where |
 |------|------|-------|
-| Oct 2026 | `ioc_enrich.py` — multi-source IOC enrichment | [ward-scripts/](./ward-scripts/) |
-| Oct 2026 | First Sigma rule (SSH brute force) | [rune-sigmas/](./rune-sigmas/) |
-| Oct 2026 | `ward_cast.py` fixed + first run | [ward-scripts/](./ward-scripts/) |
-| Oct 2026 | NextDNS log reading (3 entries) | [codex/02](./codex/02-nextdns-log-reading/) |
+| Oct 2026 | [Save Me](https://wardcraftsec.github.io/Save-Me/) — DNS filtering + IOC triage PWA (live) | [Save-Me](https://github.com/WardCraftSec/Save-Me) |
+| Oct 2026 | ioc_enrich.py — multi-source IOC enrichment | `ward-scripts/` |
+| Oct 2026 | First Sigma rule (SSH brute force) | `sigmas/` |
+| Oct 2026 | ward_cast.py fixed + first run | `ward-scripts/` |
+| Oct 2026 | NextDNS log reading (3 entries) | `codex/02` |
 
 ## Scripts
 
@@ -18,19 +18,20 @@ Blue team scripts, codex entries & detection rules.
 |--------|-------------|--------|
 | `ward_cast.py` | Check IP vs AbuseIPDB, log block/clean | ✅ Working |
 | `ioc_enrich.py` | Multi-source IOC enrichment (IP, domain) | ✅ Working |
-| `log_anomaly.py` | Parse NextDNS export, flag query spikes | 🔜 |
+| `log_anomaly.py` | Parse NextDNS export, flag query spikes | 🟡 In progress |
 
 ## Codex Entries
 
 | # | Title | Date | Tags |
 |---|-------|------|------|
-| 00 | [Day One: The Forge](./codex/00-day-one-the-forge/) | Oct 2026 | `git` `termux` `secrets` |
-| 01 | [GrapheneOS Home Stack](./codex/01-grapheneos-stack/) | Oct 2026 | `defensive` `os-hardening` `dns` |
-| 02 | [NextDNS Log Reading](./codex/02-nextdns-log-reading/) | Oct 2026 | `dns` `nextdns` |
-| 03 | [First Ward Cast](./codex/03-first-ward-cast/) | Oct 2026 | `api` `python` `ioc` |
-| 04 | Home Lab SIEM (Wazuh) | Dec 2026 | `siem` `wazuh` `sigma` |
+| 00 | Day One: The Forge | Oct 2026 | git, termux, secrets |
+| 01 | GrapheneOS Home Stack | Oct 2026 | defensive, os-hardening, dns |
+| 02 | NextDNS Log Reading | Oct 2026 | dns, nextdns |
+| 03 | First Ward Cast | Oct 2026 | api, python, ioc |
+| 04 | Home Lab SIEM (Wazuh) | Dec 2026 | siem, wazuh, sigma |
 
 ## Conventions
+
 - Write-ups: numbered `NN-slug/README.md`, written same-day
 - Scripts: run on Termux (Pixel 7) or any Linux box, Python 3.11+
 - Sigma rules: follow [Sigma spec](https://github.com/SigmaHQ/sigma)
@@ -41,5 +42,5 @@ Blue team scripts, codex entries & detection rules.
 | Item | Target |
 |------|--------|
 | Security+ (SY0-701) | Q1 2027 |
-| PT1 | Q1 2027 |
+| BTL1 | Q1 2027 |
 | SOC Tier 1 application | Q2 2027 |   
