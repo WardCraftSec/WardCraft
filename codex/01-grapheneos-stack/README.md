@@ -34,7 +34,8 @@ This isn't a "paranoid hacker setup." It started with blocking adult content at 
 | 8 | Now: reviewing NextDNS logs daily, sandboxing apps into profiles, building toward a blue team job |
 
 ## The Stack
-  ``` Pixel 7 (128GB, 8GB RAM)
+  ```
+Pixel 7 (128GB, 8GB RAM)
 ├── OS: GrapheneOS 2026102101 (Android 17)
 │ ├── Bootloader: Unlocked
 │ ├── Updates: Auto (manual approval per release)
