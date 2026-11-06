@@ -8,12 +8,18 @@ logsource:
     product: linux
     service: sshd
 detection:
-    selection:
+    selection_failed:
         message|contains: "Failed password for"
-        dst_port: 22
+    selection_invalid:
+        message|contains: "Invalid user"
     timeframe: 5m
-    condition: selection | count() by src_ip > 5
+    condition: (selection_failed or selection_invalid) | count() by src_ip > 5
 level: high
+falsepositives:
+    - Legitimate user repeatedly mistyping password
+    - Automated deployment scripts with key auth fallback
+references:
+    - https://attack.mitre.org/techniques/T1110/001/
 tags:
     - attack.credential_access
-    - attack.t1110.001
+    - attack.t1110.001   
