@@ -98,7 +98,7 @@ Without it, one `git add .` and your `.env` (with API keys) is on GitHub forever
 
 ## The honest summary
 
-I spent 4 hours tonight doing what takes a developer 10 minutes. I froze my terminal, typed malformed commands, pasted secrets into a chat, and fought with a phone keyboard. But at the end, I have a working git workflow on a Pixel 7, a branded GitHub presence, and a first script that's live.
+I spent 2 and a half hours tonight doing what takes a developer 10 minutes. I froze my terminal, typed malformed commands, pasted secrets into a chat, and fought with a phone keyboard. But at the end, I have a working git workflow on a Pixel 7, a branded GitHub presence, and a first script that's live.
 
 That's the difference between "I watched a tutorial" and "I built it and it broke and I fixed it." The breaking is the learning.
 
